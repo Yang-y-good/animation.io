@@ -2,31 +2,78 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
-		<style>
-			div{
-				height:200px;
-				width: 200px;
-				background-color: pink;
-		/* 		动画简写
-				animation: 动画名称 持续时间 运动曲线 何时开始 播放次数 是否反方向 动画初始或者结束状态;
-				 */
-				
-				animation: move 2s linear 0s infinite alternate;
+		<title>梦幻西游</title>
+		<style type="text/css">
+			body {
+				background: url(images/background.webp) no-repeat;
 			}
 			/* 定义动画 */
 			@keyframes move{
 				from{
-					/* translate: 指定对象的2D translation（2D平移）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0 */
-					transform: translate(0);
+					background-position: 0 0;
 				}
 				to{
-					transform: translate(1200px,0);
+					background-position: -1600px 0;
 				}
+			}
+			@keyframes shashen{
+				from{
+					background-position: 0 0;
+				}
+				to{
+					background-position: -1680px 0;
+				}
+			}
+			@keyframes tanshen{
+				from{
+					background-position: 0 0;
+				}
+				to{
+					background-position: -1360px 0;
+				}
+			}
+			
+			.attribute{
+				position: absolute;
+				width: 200px;
+				height: 180px;
+				/* 动画持续时间1.4s 分八步走完 无限循环 */
+				animation: move 1.4s steps(8) infinite;
+			}
+			.houzi {
+				top: 347px;
+				left: 391px;
+				background: url(images/猴哥.png) no-repeat;
+			}
+			.bajie{
+				top: 347px;
+				left: 600px;
+				background: url(images/八戒.png) no-repeat;
+			}
+			.tanshen{
+				position: absolute;
+				width: 170px;
+				height: 240px;
+				top: 315px;
+				left: 770px;
+				background: url(images/唐僧.png) no-repeat;
+				animation: tanshen 1.4s steps(8) infinite;
+			}
+			.shashen{
+				position: absolute;
+				width: 210px;
+				height: 180px;
+				top: 347px;
+				left: 938px;
+				background: url(images/沙僧.png);
+				animation: shashen 1.4s steps(8) infinite;
 			}
 		</style>
 	</head>
 	<body>
-		<div></div>
+		<div class="houzi attribute"></div>
+		<div class="bajie attribute"></div>
+		<div class="tanshen attribute"></div>
+		<div class="shashen"></div>
 	</body>
 </html>
